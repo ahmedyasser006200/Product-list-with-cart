@@ -51,7 +51,7 @@ fetch("data.json")
       let addBtn = document.createElement("button");
       addBtn.className = "add-button";
       let btnImage = document.createElement("img");
-      btnImage.src = "../assets/images/icon-add-to-cart.svg";
+      btnImage.src = "assets/images/icon-add-to-cart.svg";
       addBtn.textContent = "Add to Cart";
       addBtn.prepend(btnImage);
       imageBox.appendChild(addBtn);
