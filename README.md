@@ -41,8 +41,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL:
-- Live Site URL:
+- Solution URL: https://www.frontendmentor.io/solutions/responsive-product-list-with-cart-using-vanilla-javascript-and-local-s-q01WsMt30Y
+- Live Site URL: https://ahmedyasser006200.github.io/Product-list-with-cart/
 
 ---
 
