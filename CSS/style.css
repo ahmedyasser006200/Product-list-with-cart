@@ -1,0 +1,439 @@
+/* Start Variables */
+:root {
+  --red: hsl(14, 86%, 42%);
+  --green: hsl(159, 69%, 38%);
+  --rose-50: hsl(20, 50%, 98%);
+  --rose-100: hsl(13, 31%, 94%);
+  --rose-300: hsl(14, 25%, 72%);
+  --rose-400: hsl(7, 20%, 60%);
+  --rose-500: hsl(12, 20%, 44%);
+  --rose-900: hsl(14, 65%, 9%);
+  --font-size: 16px;
+}
+/* End Variables */
+/* Start Global Rules */
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Red Hat Text", sans-serif;
+  background-color: var(--rose-100);
+  color: var(--rose-900);
+  margin: 0;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+.container {
+  margin: 50px auto;
+  max-width: 1200px;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+@media(max-width:768px) {
+  .container {
+    gap: 25px;
+    margin: 20px auto;
+  }
+}
+@media (max-width: 992px) {
+  .container {
+    flex-direction: column;
+  }
+}
+/* End Global Rules */
+/* Start Products */
+.products {
+  flex: 1;
+  max-width: 900px;
+  width: 100%;
+}
+.products .products-header {
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+.products .products-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 30px;
+}
+.products .products-box .product .image-box {
+  position: relative;
+  border: 2px solid transparent;
+  transition: 0.3s;
+}
+.products .products-box .product .image-box .image {
+  border-radius: 10px;
+}
+.products .products-box .product .image-box .add-button {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%,50%);
+  border: 1px solid var(--rose-500);
+  border-radius: 20px;
+  width: 65%;
+  background-color: var(--rose-50);
+  z-index: 1;
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 12px;
+  gap: 8px;
+  transition: 0.3s;
+}
+.products .products-box .product .image-box .add-button:hover {
+  color: var(--red);
+  border-color: var(--red);
+}
+.products .products-box .product .product-text {
+  margin-top: 40px;
+}
+.products .products-box .product .product-text .category {
+  color: var(--rose-500);
+  font-weight: 400;
+  margin: 0;
+}
+.products .products-box .product .product-text .name {
+  font-weight: 700;
+  font-size: var(--font-size);
+  margin: 7px 0 0;
+}
+.products .products-box .product .product-text .price {
+  color: var(--red);
+  font-weight: 600;
+  margin: 7px 0 0;
+}
+.products .products-box .product .image-box .edit-btn {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 50%);
+  border-radius: 20px;
+  width: 65%;
+  background-color: var(--red);
+  z-index: 1;
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 400;
+  font-size: 12px;
+  transition: 0.3s;
+  color: var(--rose-50);
+}
+.image-box:has(.edit-btn) {
+  border-color: var(--red) !important;
+  border-radius: 10px;
+}
+.image-box:has(.edit-btn:hover) {
+  border-color: transparent !important;
+}
+.edit-btn svg {
+  width: 18px;
+  height: 18px;
+  padding: 3px;
+  outline: none;
+  border: 1px solid var(--rose-50);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.edit-btn svg:hover path {
+  fill: var(--red);
+}
+.edit-btn svg:hover {
+  background-color: var(--rose-50);
+}
+@media (max-width: 768px) {
+  .add-button,
+  .edit-btn {
+    width: 75%;
+  }
+}
+/* End Products */
+/* Start Cart */
+.cart {
+  background-color: var(--rose-50);
+  min-height: 300px;
+  border-radius: 20px;
+  max-width: 380px;
+  width: 100%;
+  padding: 10px;
+}
+@media (max-width: 992px) {
+  .cart {
+    max-width: 100%;
+  }
+}
+.cart .cart-header {
+  color: var(--red);
+  margin: 0 0 5px 0;
+  padding: 10px;
+}
+.cart .empty-state figure {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.cart .empty-state figure img {
+  padding-bottom: 15px;
+}
+.cart .empty-state figure figcaption {
+  color: var(--rose-500);
+}
+.cart .active-state {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+
+}
+.cart .active-state .items {
+  width: 100%;
+}
+.cart .active-state .items .item {
+  border-bottom: 2px solid var(--rose-100);
+  position: relative;
+}
+.cart .active-state .items .item .product-name {
+  font-size: var(--font-size);
+  margin: 5px 0 0;
+  font-weight: 600;
+}
+.cart .active-state .items .item .product-details {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.cart .active-state .items .item .product-details .item-quantity {
+  font-weight: 600;
+  color: var(--red);
+}
+.cart .active-state .items .item .product-details .price-per-one {
+  color: var(--rose-400);
+  font-weight: 400;
+}
+.cart .active-state .items .item .product-details .total-item-price {
+  color: var(--rose-500);
+  font-weight: 500;
+}
+.cart .active-state .items .item .remove-button {
+  width: 18px;
+  height: 18px;
+  padding: 3px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  outline: none;
+  border: 1px solid var(--rose-400);
+  background-color: var(--rose-50);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.remove-button:hover path {
+  fill: var(--rose-900);
+}
+.cart .active-state .items .item .remove-button:hover {
+  border-color: var(--rose-900);
+}
+.cart .active-state .order-total {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+.cart .active-state .order-total > p {
+  font-weight: 400;
+}
+.cart .active-state .order-total .total-price {
+  font-weight: 700;
+}
+.cart .active-state .carbon-neutral {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 5px;
+  align-items: center;
+  background-color: var(--rose-100);
+  border-radius: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+}
+.cart .active-state .confirm-button {
+  cursor: pointer;
+  margin: 10px;
+  width: 100%;
+  border-radius: 25px;
+  background-color: var(--red);
+  padding: 15px;
+  color: var(--rose-50);
+  border: none;
+  outline: none;
+  transition: 0.3s;
+}
+.cart .active-state .confirm-button:hover {
+  background-color: hsl(14, 86%, 34%);
+}
+/* End Cart */
+/* Start Confirmation */
+.confirmation-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.confirmation-overlay .confirmation-modal {
+  background-color: var(--rose-50);
+  border-radius: 10px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 500px;
+  max-width: 90%;
+  gap: 8px;
+  max-height: 90vh;
+}
+@media (max-width: 768px) {
+  .confirmation-overlay .confirmation-modal {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 20px 20px 0 0;
+    margin-top: auto;
+}
+}
+.confirmation-overlay .confirmation-modal .confirmation-header {
+  margin: 20px 0 10px;
+}
+.confirmation-overlay .confirmation-modal .confirmation-header .confirmation-title {
+  font-size: 28px;
+}
+.confirmation-overlay .confirmation-modal .confirmation-header .confirmation-text {
+  color: var(--rose-500);
+  font-size: 14px;
+  margin: 0;
+}
+.confirmation-overlay .confirmation-modal .confirmation-items {
+  width: 100%;
+  background-color: var(--rose-100);
+  padding: 15px;
+  border-radius: 10px;
+  overflow-y: auto;
+}
+.confirmation-overlay .confirmation-modal .confirmation-items .confirmation-item {
+  border-bottom: 1px solid hsla(14, 24%, 72%, 0.11);
+  position: relative;
+  padding: 10px 0;
+}
+.confirmation-overlay .confirmation-modal .confirmation-items .confirmation-item .item-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.confirmation-overlay .confirmation-modal .confirmation-items .confirmation-item .item-info .item-image {
+  border-radius: 10px;
+  max-width: 75px;
+}
+@media (max-width: 768px) {
+  .confirmation-overlay .confirmation-modal .confirmation-items .confirmation-item .item-info .item-image {
+    max-width: 55px;
+  }
+}
+.confirmation-overlay .confirmation-modal .confirmation-items .confirmation-item .item-info .item-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 50%;
+}
+.confirmation-overlay .confirmation-modal .confirmation-items .confirmation-item .item-info .item-text .item-name {
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.confirmation-overlay .confirmation-modal .confirmation-items .confirmation-item .item-info .item-text .item-meta {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  font-size: 14px
+}
+@media (max-width: 768px) {
+  .confirmation-overlay .confirmation-modal .confirmation-items .confirmation-item .item-info .item-text {
+    font-size: 14px;
+  }
+
+  .confirmation-overlay .confirmation-modal .confirmation-items .confirmation-item .item-info .item-text .item-meta {
+    font-size: 12px;
+  }
+}
+.confirmation-overlay .confirmation-modal .confirmation-items .confirmation-item .item-info .item-text .item-meta .item-quantity {
+  font-weight: 600;
+  color: var(--red);
+}
+.confirmation-overlay .confirmation-modal .confirmation-items .confirmation-item .item-info .item-text .item-meta .item-price {
+  color: var(--rose-500);
+  font-weight: 400;
+}
+.confirmation-overlay .confirmation-modal .confirmation-items .confirmation-item .item-total {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 600;
+  font-size: 14px;
+}
+.confirmation-overlay .confirmation-modal .confirmation-items .confirmation-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.confirmation-overlay .confirmation-modal .confirmation-items .confirmation-total .total-label {
+  font-weight: 400;
+}
+.confirmation-overlay .confirmation-modal .confirmation-items .confirmation-total .total-price {
+  font-weight: 700;
+}
+.confirmation-overlay .confirmation-modal .start-order-btn {
+  cursor: pointer;
+  width: 100%;
+  border-radius: 25px;
+  background-color: var(--red);
+  padding: 15px;
+  color: var(--rose-50);
+  border: none;
+  outline: none;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+.confirmation-overlay .confirmation-modal .start-order-btn:hover {
+  background-color: hsl(14, 86%, 34%);
+}
+/* End Confirmation */

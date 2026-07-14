@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="stylesheet" href="CSS/normalize.css" />
+    <title>Frontend Mentor | Product list with cart</title>
+    <style>
+      .attribution {
+        font-size: 0.6875rem;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="products">
+        <h1 class="products-header">Desserts</h1>
+        <div class="products-box"></div>
+      </div>
+
+      <div class="cart">
+        <h2 class="cart-header">Your Cart (<span class="quantity"></span>)</h2>
+        <div class="empty-state">
+          <figure>
+            <img src="assets/images/illustration-empty-cart.svg" alt="" />
+            <figcaption>Your added items will appear here</figcaption>
+          </figure>
+        </div>
+        <div class="active-state">
+          <div class="items"></div>
+
+          <div class="order-total">
+            <p>Order Total</p>
+            <p class="total-price"></p>
+          </div>
+          <div class="carbon-neutral">
+            <img
+              src="assets/images/icon-carbon-neutral.svg"
+              alt="Carbon Neutral"
+            />
+            <p>This is a <strong>carbon-neutral</strong> delivery</p>
+          </div>
+          <button class="confirm-button">Confirm Order</button>
+        </div>
+      </div>
+    </div>
+    <div class="confirmation-overlay">
+      <div class="confirmation-modal">
+        <div class="confirmation-header">
+          <img
+            class="confirmation-icon"
+            src="assets/images/icon-order-confirmed.svg"
+            alt="Order Confirmed"
+          />
+          <h2 class="confirmation-title">Order Confirmed</h2>
+          <p class="confirmation-text">We hope you enjoy your food</p>
+        </div>
+        <div class="confirmation-items"></div>
+        <button class="start-order-btn">Start New Order</button>
+      </div>
+    </div>
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="https://github.com/ahmedyasser006200">Ahmed Yasser</a>.
+    </footer>
+    <script src="JS/main.js"></script>
+  </body>
+</html>
